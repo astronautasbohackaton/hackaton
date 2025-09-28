@@ -2,7 +2,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.php", "use": "@vercel/php" }
+    { "src": "index.php", "use": "runtime: "vercel-php@0.6.0"" }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "index.php" }
