@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Api weather</title>
+</head>
+<body>
+  <h1>
+    Api Weather
+        <button onclick="obtenerClima()">Haz click</button>
+    <script>
+// URL de la API con tu API Key y parámetros
+const apiKey = 'TU_API_KEY';
+const ciudad = 'La Paz';
+const url = `https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX&community=AG&longitude=-68.074183&latitude=-16.451640&start=20250901&end=20250930&format=JSON`;
+
+// Función para llamar a la API
+async function obtenerClima() {
+  try {
+    const response = await fetch(url, {
+      method: 'GET', // método GET
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+//alert("post fetch api");
+    if (!response.ok) {
+      throw new Error(`Error en la llamada a la API: ${response.status}`);
+    }
+//alert("init json");
+    const data = await response.json();
+    
+  //  alert("post json data" + data);
+    
+  //  alert("post json data " + data.geometry.type);
+    
+    alert("post json data " + data.geometry.coordinates);
+    console.log('Datos del clima:', data);
+
+    // Ejemplo: mostrar temperatura
+    //console.log(`La temperatura en ${ciudad} es ${data.main.temp}°C`);
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+// Llamar a la función
+obtenerClima();
+</script>
+  </h1>
+</body>
+</html>
