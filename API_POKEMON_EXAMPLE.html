@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Api weather</title>
+</head>
+<body>
+  <h1>
+    Api POKEMON
+        <button onclick="obtenerClima()">Haz click</button>
+    <script>
+// URL de la API con tu API Key y parámetros
+const apiKey = 'TU_API_KEY';
+const ciudad = 'La Paz';
+const url = 'https://pokeapi.co/api/v2/pokemon';
+
+// Función para llamar a la API
+async function obtenerClima() {
+  try {
+    const response = await fetch(url, {
+      method: 'GET', // método GET
+	  headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+	
+	);
+//alert("post fetch api");
+    if (!response.ok) {
+      throw new Error(`Error en la llamada a la API: ${response.status}`);
+    }
+//alert("init json");
+    const data = await response.json();
+	
+	
+//---PARSEOS Y PROCESADO DE  FORMATOS JSON 
+		const jsonString = JSON.stringify(data);
+	
+	const indexOfInicio = jsonString.indexOf("[")+1;
+	  alert("JSON indexof inicio" + indexOfInicio);
+	const indexOfFin = jsonString.indexOf("]");
+	alert("JSON indexof fin" + indexOfFin);
+	let JSONSubString = jsonString.substring(indexOfInicio, indexOfFin); // "Hello"
+    alert("JSON TO STRING" + jsonString);
+	alert("JSON SUBSTRING" + JSONSubString);
+	
+	    //--ADD { } IN JSON ESTRUCTURE
+		
+		FullSubSTringJSON= "["+JSONSubString+"]";
+		alert("FULL SUBSTRING JSON: " + FullSubSTringJSON);
+		//--FIN ADD { } IN JSON ESTRUCTURE
+		const jsObject = JSON.parse(FullSubSTringJSON);
+		
+		alert("OBJETO FULL SUBSTRING JSON: " + jsObject);
+
+//alert("OBJ EN FORMTATO JSON: " + jsObject.name);
+//--- FIN PARSEOS Y PROCESADO DE  FORMATOS JSON 
+  
+  //  alert("post json data" + data);
+    
+  //  alert("post json data " + data.geometry.type);
+  
+  //---CICLO FOREACH RECORRE DATOS EN OBJETO JSON
+      jsObject.forEach(jsObject => {
+      console.log(`ID: ${jsObject.name}, Name: ${jsObject.url}`);
+	  alert("JSON OBJ FOREACH NAME: " + jsObject.name);
+    });
+  //---FIN CICLO FOREACH RECORRE DATOS EN OBJETO JSON
+    
+  //  alert("OBJ JSON POKEMON NAME " + jsObject.results.name.);
+  //  console.log('Datos del clima:', jsObject);
+
+    // Ejemplo: mostrar temperatura
+    //console.log(`La temperatura en ${ciudad} es ${data.main.temp}°C`);
+
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+// Llamar a la función
+obtenerClima();
+</script>
+  </h1>
+</body>
+</html>
