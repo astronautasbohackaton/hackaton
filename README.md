@@ -15,7 +15,7 @@ La NASA ha recopilado una gran cantidad de datos meteorológicos globales durant
 
 Muchas aplicaciones pueden proporcionar pronósticos del clima con 1 a 2 semanas de anticipación, incluyendo valores “normales” promedio para muchos lugares. Sin embargo, sería útil contar con una aplicación que pueda determinar cuáles son las condiciones climáticas probables en un lugar y momento específicos con varios meses de anticipación. Los datos de observación terrestre de la NASA pueden usarse para crear un compendio de datos para una ubicación seleccionada en cualquier época del año y así determinar esta información. Además, dado que las condiciones están cambiando en muchos lugares, los datos de la NASA también pueden emplearse para estimar si la probabilidad de lluvias intensas, temperaturas peligrosamente altas, alta humedad o olas de calor ha ido aumentando en una ubicación en un momento específico del año.
 
-##OBJETIVOS
+## OBJETIVOS
 
 Tu desafío es desarrollar una aplicación que use datos de observación terrestre de la NASA y permita a los usuarios crear un panel personalizado para obtener información sobre la probabilidad de condiciones meteorológicas específicas (por ejemplo, temperatura, precipitaciones, calidad del aire, velocidad del viento, etc.) en una ubicación y fecha (día del año) que ellos seleccionen.
 
@@ -23,7 +23,7 @@ Piensa en cómo los usuarios proporcionarán la información (por ejemplo, la ub
 
 ¿Cómo proporcionará tu aplicación la información deseada? ¿Los usuarios verán gráficos o mapas que ilustren la probabilidad de estos eventos meteorológicos acompañados de una explicación sencilla en texto, u otra cosa? No olvides que algunos usuarios también desearán la capacidad de descargar un archivo de salida que contenga el subconjunto de datos relacionado con la consulta (es decir, las variables relevantes para la ubicación y el momento de interés especificados).
 
-POTENCIALES CONSIDERACIONES
+## POTENCIALES CONSIDERACIONES
 
 Puedes (pero no estás obligado a) considerar lo siguiente:
 
