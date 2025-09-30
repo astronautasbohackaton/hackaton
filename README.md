@@ -2,7 +2,7 @@
 Repository AstronautasBO Hackaton Space Apps NASA 2025
 RETO CHALLENGE NASA SPACE APPS HACKATON - EQUIPO ASTRONAUTASBO
 
-##Resumen
+## Resumen
 
 Si estás planeando un evento al aire libre —como unas vacaciones, una caminata por un sendero o una jornada de pesca en un lago— sería útil conocer las probabilidades de mal clima para el momento y lugar que estás considerando. Existen muchos tipos de datos de observación de la Tierra que pueden proporcionar información sobre las condiciones meteorológicas en un lugar específico y en un día del año. Tu desafío es construir una aplicación con una interfaz personalizada que permita a los usuarios realizar una consulta adaptada para indicarles la probabilidad de condiciones “muy calurosas”, “muy frías”, “muy ventosas”, “muy húmedas” o “muy incómodas” en el lugar y momento que especifiquen.
 
