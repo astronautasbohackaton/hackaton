@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seleccionar posición en OpenStreetMap</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Cargar Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  
+  <!-- Cargar Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <style>
+    #map { height: 500px; width: 100%; }
+  </style>
+</head>
+<body>
+  <h3>Selecciona un punto en el mapa</h3>
+  <div id="map"></div>
+  <p>Latitud: <span id="lat">-</span> | Longitud: <span id="lng">-</span></p>
+
+  <script>
+    // Crear el mapa y centrarlo en alguna ubicación (ejemplo: Bolivia)
+    var map = L.map('map').setView([-16.5, -68.15], 5);
+
+    // Cargar los tiles de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var marker;
+
+    // Detectar click en el mapa
+    map.on('click', function(e) {
+      var lat = e.latlng.lat.toFixed(6);
+      var lng = e.latlng.lng.toFixed(6);
+
+      // Mostrar latitud y longitud
+      document.getElementById('lat').textContent = lat;
+      document.getElementById('lng').textContent = lng;
+
+      // Colocar marcador en la posición seleccionada
+      if (marker) {
+        marker.setLatLng(e.latlng);
+      } else {
+        marker = L.marker(e.latlng).addTo(map);
+      }
+    });
+  </script>
+</body>
+</html>
