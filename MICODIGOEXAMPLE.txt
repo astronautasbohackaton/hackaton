@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Promedio de Temperaturas</title>
+    <script>
+        /**
+         * Calcula el promedio de un arreglo de temperaturas.
+         * @param {number[]} temperaturas
+         * @returns {number}
+         */
+        function promedioTemperaturas(temperaturas) {
+            if (temperaturas.length === 0) return 0;
+            let suma = 0;
+            for (let temp of temperaturas) {
+                suma += temp;
+            }
+            return suma / temperaturas.length;
+        }
+
+        function calcularPromedio() {
+            const valores = document.getElementById('temperaturas').value;
+            const tempArray = valores.split(',').map(Number);
+            const promedio = promedioTemperaturas(tempArray);
+            document.getElementById('resultado').textContent = 
+                'Promedio: ' + promedio.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h2>Calcula el promedio de temperaturas</h2>
+    <input type="text" id="temperaturas" placeholder="Ej: 20,22,19,25">
+    <button onclick="calcularPromedio()">Calcular Promedio</button>
+    <div id="resultado"></div>
+</body>
+</html>
